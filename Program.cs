@@ -1,11 +1,14 @@
 ﻿
 
+using System;
+
 namespace Conventions
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+
             #region ConversionKMToMile
             //Console.WriteLine("Write km:");
             //double km = double.Parse(Console.ReadLine());
@@ -62,11 +65,32 @@ namespace Conventions
             #endregion
 
             #region Replace
-            string text = Console.ReadLine();
-            string valueToRep = Console.ReadLine();
-            string rep = Console.ReadLine();
+            //string text = Console.ReadLine();
+            //string valueToRep = Console.ReadLine();
+            //string rep = Console.ReadLine();
 
-            Console.WriteLine(text.Replace(valueToRep, rep));
+            //Console.WriteLine(text.Replace(valueToRep, rep));
+            #endregion
+
+            #region TwoDates
+            //string firstDate = Console.ReadLine();
+            //string secondDate = Console.ReadLine();
+            //DateTime.TryParse(firstDate, out DateTime first);
+            //DateTime.TryParse(secondDate, out DateTime second);
+            //TimeSpan diff = first - second;
+            //Console.WriteLine("Nr of days is {0}", diff.Days);
+            #endregion
+
+
+            #region BankAccount
+            var manager = new AccountManager();
+            manager.OpenAccount(12, "Nicolae");
+            manager.DisplayAccountDetails(12);
+            manager.Widraw(12,20);
+            manager.Deposit(12, 21);
+            manager.DisplayAccountDetails(12);
+            manager.Widraw(12, 5);
+            manager.DisplayAccountDetails(12);
             #endregion
         }
     }
