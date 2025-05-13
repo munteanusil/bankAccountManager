@@ -83,15 +83,115 @@ namespace Conventions
 
 
             #region BankAccount
-            var manager = new AccountManager();
-            manager.OpenAccount(12, "Nicolae");
-            manager.DisplayAccountDetails(12);
-            manager.Widraw(12,20);
-            manager.Deposit(12, 21);
-            manager.DisplayAccountDetails(12);
-            manager.Widraw(12, 5);
-            manager.DisplayAccountDetails(12);
+            //var manager = new AccountManager();
+            //manager.OpenAccount(12, "Nicolae");
+            //manager.DisplayAccountDetails(12);
+            //manager.Widraw(12,20);
+            //manager.Deposit(12, 21);
+            //manager.DisplayAccountDetails(12);
+            //manager.Widraw(12, 5);
+            //manager.DisplayAccountDetails(12);
             #endregion
+
+            #region AnBisect
+            //var year = int.Parse(Console.ReadLine()!);
+
+            //if(((year % 4 is 0) && (year % 100 is not 0)) || (year % 400 is 0))
+            //{
+
+            //}
+
+            //if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+            //    Console.WriteLine("Ann bisect");
+            //else
+            //    Console.WriteLine("Ann simply");
+            #endregion
+
+            #region TypeOfTriangle
+            //var l1 = double.Parse(Console.ReadLine());
+            //var l2 = double.Parse(Console.ReadLine());
+            //var l3 = double.Parse(Console.ReadLine());
+
+
+            //if(l1 == l2 && l2 == l3)
+            //{
+            //    Console.WriteLine("Echilateral");
+            //}
+            //else if((l1 == l2 && l2 != l3) || (l1 == l3 && l2 != l3))
+            //{
+            //    Console.WriteLine("Isoscel");
+            //}
+            //else if(l1 != l2 && l2 != l3)
+            //{
+            //    Console.WriteLine("Scalen");
+            //}
+            #endregion
+
+            #region Calculator
+
+            var fistNr = ReadNr();
+            var secondNr = ReadNr();
+            switch (ReadOperation())
+            {
+                case '+':
+                    Console.WriteLine($"{fistNr} + {secondNr} = {fistNr + secondNr}");
+                    break;
+                case '-':
+                    Console.WriteLine($"{fistNr} - {secondNr} = {fistNr - secondNr}");
+                    break;
+                case '*':
+                    Console.WriteLine($"{fistNr} * {secondNr} = {fistNr * secondNr}");
+                    break;
+                case '/':
+                    Console.WriteLine($"{fistNr} / {secondNr} = {(double)fistNr / secondNr}");
+                    break;
+                case '^':
+                    Console.WriteLine($"{fistNr} ^ {secondNr} = {Math.Pow(fistNr, secondNr)}");
+                    break;
+                default:
+                    Console.WriteLine("Write a valid operation");
+                    break;
+            }
+
+            #endregion
+        }
+
+        static int ReadNr()
+        {
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out int nr))
+                {
+                    return nr;
+                }
+                else
+                {
+                    Console.WriteLine("Write a valid number");
+                }
+            }
+        }
+
+        static char ReadOperation()
+        {
+            char op;
+            Console.WriteLine("Write operation");
+            while (true)
+            {
+                op = Console.ReadKey().KeyChar;
+                switch (op)
+                {
+                    case '+':
+                    case '-':
+                    case '*':
+                    case '/':
+                    case '^':
+                        Console.WriteLine();
+                        return op;
+                    default:
+                        Console.WriteLine("Write a valid operation");
+                        break;
+                }
+            }
         }
     }
 }
