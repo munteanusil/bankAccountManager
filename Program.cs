@@ -129,29 +129,61 @@ namespace Conventions
 
             #region Calculator
 
-            var fistNr = ReadNr();
-            var secondNr = ReadNr();
-            switch (ReadOperation())
-            {
-                case '+':
-                    Console.WriteLine($"{fistNr} + {secondNr} = {fistNr + secondNr}");
-                    break;
-                case '-':
-                    Console.WriteLine($"{fistNr} - {secondNr} = {fistNr - secondNr}");
-                    break;
-                case '*':
-                    Console.WriteLine($"{fistNr} * {secondNr} = {fistNr * secondNr}");
-                    break;
-                case '/':
-                    Console.WriteLine($"{fistNr} / {secondNr} = {(double)fistNr / secondNr}");
-                    break;
-                case '^':
-                    Console.WriteLine($"{fistNr} ^ {secondNr} = {Math.Pow(fistNr, secondNr)}");
-                    break;
-                default:
-                    Console.WriteLine("Write a valid operation");
-                    break;
-            }
+            //var fistNr = ReadNr();
+            //var secondNr = ReadNr();
+            //switch (ReadOperation())
+            //{
+            //    case '+':
+            //        Console.WriteLine($"{fistNr} + {secondNr} = {fistNr + secondNr}");
+            //        break;
+            //    case '-':
+            //        Console.WriteLine($"{fistNr} - {secondNr} = {fistNr - secondNr}");
+            //        break;
+            //    case '*':
+            //        Console.WriteLine($"{fistNr} * {secondNr} = {fistNr * secondNr}");
+            //        break;
+            //    case '/':
+            //        Console.WriteLine($"{fistNr} / {secondNr} = {(double)fistNr / secondNr}");
+            //        break;
+            //    case '^':
+            //        Console.WriteLine($"{fistNr} ^ {secondNr} = {Math.Pow(fistNr, secondNr)}");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Write a valid operation");
+            //        break;
+            //}
+
+            #endregion
+
+            #region SallaryCalculator
+            //SallaryCalculator.CalculateSallary(EmployType.Manager, "Ion");
+            //SallaryCalculator.CalculateSallary(EmployType.Manager, "Vasile");
+
+            #endregion
+
+            #region ReadArray
+            //ReadArray();
+            #endregion
+
+            #region Stack
+            //var st = new StackImplimentation();
+            //st.Push(2);
+            //st.Push(3);
+            //Console.WriteLine($"Stack Pop: {st.Pop()}");
+            //Console.WriteLine($"Stack Peek: {st.Peek()}");
+
+            #endregion
+
+            #region QueueImplimentation
+            var customQueue = new CustomQueue();
+            customQueue.Enqueue(2);
+            Console.WriteLine($"Peek: {customQueue.Peek()}");
+            customQueue.Enqueue(4);
+            Console.WriteLine($"Peek: {customQueue.Peek()}");
+            Console.WriteLine($"Dequeue: {customQueue.Dequeue()}");
+            Console.WriteLine($"Peek: {customQueue.Peek()}");
+            Console.WriteLine($"IsEmpty: {customQueue.IsEmpty()}");
+
 
             #endregion
         }
@@ -192,6 +224,19 @@ namespace Conventions
                         break;
                 }
             }
+        }
+
+        static void ReadArray()
+        {
+            Console.WriteLine("Write all numbers separated by space");
+            var text = Console.ReadLine();
+            var splitArray = text.Split(" ");
+            int[] array = Array.ConvertAll(splitArray, int.Parse);
+            Console.WriteLine($"Array sum is {array.Sum()}");
+            Console.WriteLine($"Array avg is {array.Average()}");
+            Array.Reverse(array);
+            splitArray.Reverse();
+            var ha = splitArray.ToHashSet<string>();
         }
     }
 }
