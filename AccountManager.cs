@@ -2,46 +2,49 @@
 {
     class AccountManager
     {
-        BankAccount Account;
+        List<BankAccount> Accounts = new List<BankAccount>();
 
         public void OpenAccount(int number, string name)
         {
-            Account = new BankAccount(number, name, 0, DateTime.UtcNow);
+            Accounts.Add(new BankAccount(number, name, 0, DateTime.UtcNow));
         }
 
         public void DisplayAccountDetails(int number)
         {
-            if (Account.AccountNumber != number)
+            var foundAccount = Accounts.FirstOrDefault(a => a.AccountNumber == number);
+            if(foundAccount.AccountNumber == 0)
             {
                 Console.WriteLine("Account not found!");
             }
             else
             {
-                Account.DisplayAccountDetails();
+                foundAccount.DisplayAccountDetails();
             }
         }
 
         public void Deposit(int number, int amount)
         {
-            if (Account.AccountNumber != number)
+            var foundAccount = Accounts.FirstOrDefault(a => a.AccountNumber == number);
+            if (foundAccount.AccountNumber == 0)
             {
                 Console.WriteLine("Account not found!");
             }
             else
             {
-                Account.Deposit(amount);
+                foundAccount.Deposit(amount);
             }
         }
 
         public void Widraw(int number, int amount)
         {
-            if (Account.AccountNumber != number)
+            var foundAccount = Accounts.FirstOrDefault(a => a.AccountNumber == number);
+            if (foundAccount.AccountNumber == 0)
             {
                 Console.WriteLine("Account not found!");
             }
             else
             {
-                Account.Widraw(amount);
+                foundAccount.Widraw(amount);
             }
         }
     }

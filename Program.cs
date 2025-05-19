@@ -83,14 +83,17 @@ namespace Conventions
 
 
             #region BankAccount
-            //var manager = new AccountManager();
-            //manager.OpenAccount(12, "Nicolae");
-            //manager.DisplayAccountDetails(12);
-            //manager.Widraw(12,20);
-            //manager.Deposit(12, 21);
-            //manager.DisplayAccountDetails(12);
-            //manager.Widraw(12, 5);
-            //manager.DisplayAccountDetails(12);
+            var manager = new AccountManager();
+            manager.OpenAccount(12, "Nicolae");
+            manager.DisplayAccountDetails(12);
+            manager.Widraw(12, 20);
+            manager.Deposit(12, 21);
+            manager.DisplayAccountDetails(12);
+            manager.Widraw(12, 5);
+            manager.DisplayAccountDetails(12);
+
+            manager.OpenAccount(13, "Nicu");
+            manager.DisplayAccountDetails(13);
             #endregion
 
             #region AnBisect
@@ -175,15 +178,174 @@ namespace Conventions
             #endregion
 
             #region QueueImplimentation
-            var customQueue = new CustomQueue();
-            customQueue.Enqueue(2);
-            Console.WriteLine($"Peek: {customQueue.Peek()}");
-            customQueue.Enqueue(4);
-            Console.WriteLine($"Peek: {customQueue.Peek()}");
-            Console.WriteLine($"Dequeue: {customQueue.Dequeue()}");
-            Console.WriteLine($"Peek: {customQueue.Peek()}");
-            Console.WriteLine($"IsEmpty: {customQueue.IsEmpty()}");
+            //var customQueue = new CustomQueue();
+            //customQueue.Enqueue(2);
+            //Console.WriteLine($"Peek: {customQueue.Peek()}");
+            //customQueue.Enqueue(4);
+            //Console.WriteLine($"Peek: {customQueue.Peek()}");
+            //Console.WriteLine($"Dequeue: {customQueue.Dequeue()}");
+            //Console.WriteLine($"Peek: {customQueue.Peek()}");
+            //Console.WriteLine($"IsEmpty: {customQueue.IsEmpty()}");
 
+
+            #endregion
+
+            #region note
+            //int n = int.Parse(Console.ReadLine());
+            //int[] note = new int[n];
+
+            //int notePozitive = 0;
+            //int noteNegative = 0;
+
+            //int sumaNotePozitive = 0;
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    Console.WriteLine($"Introduceti nota {i + 1}: ");
+            //    note[i] = int.Parse(Console.ReadLine());
+            //    if (note[i] >= 5)
+            //    {
+            //        notePozitive++;
+            //        sumaNotePozitive += note[i];
+            //    }
+            //    else
+            //    {
+            //        noteNegative++;
+            //    }
+            //}
+
+            //Console.WriteLine($"Numarul de note pozitive este: {notePozitive}");
+            //if (noteNegative > 0)
+            //{
+            //    Console.WriteLine($"Numarul de note negative este: {noteNegative}, respectiv esti coregent!");
+            //}
+            //Console.WriteLine($"Media notelor pozitive este: {sumaNotePozitive / notePozitive}");
+
+            #endregion
+
+            #region primeNumber
+            //int nr = int.Parse(Console.ReadLine());
+            //bool isPrime = true;
+            //for (int i = 2; i < Math.Sqrt(nr); i++)
+            //{
+            //    if (nr % i == 0)
+            //    {
+            //        isPrime = false;
+            //        break;
+            //    }
+            //}
+            //if (isPrime)
+            //{
+            //    Console.WriteLine($"{nr} is prime!");
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"{nr} is not prime!");
+            //}
+
+            #endregion
+
+            #region numberSum
+
+            //int nr = ReadNr();
+            //int sum = 0;
+            //while(nr != 0)
+            //{
+            //    int digit = nr % 10;
+            //    sum += digit;
+            //    nr /= 10;
+            //}
+            //Console.WriteLine(sum);
+
+            #endregion
+
+            #region Fibonaci
+
+            //int nr = ReadNr();
+            //if(nr < 2)
+            //{
+            //    Console.WriteLine("Number should be greater than 2");
+            //    return;
+            //}
+            //int a = 0, b = 1, c, contor = 2;
+            //Console.WriteLine(a);
+            //Console.WriteLine(b);
+            //do
+            //{
+            //    c = a + b;
+            //    a = b;
+            //    b = c;
+            //    Console.WriteLine(c);
+            //    contor++;
+            //}
+            //while (contor < nr);
+            #endregion
+
+            #region Palindrom
+            //int nr = ReadNr();
+            //int original = nr;
+            //int revers = 0;
+            ////1234
+            //do
+            //{
+            //    int digit = nr % 10;
+            //    revers = revers * 10 + digit;
+            //    nr /= 10;
+            //}
+            //while (nr != 0);
+
+            //Console.WriteLine($"Number {original} is palidnrom {revers == original}");
+            #endregion
+
+            #region bubbleSort
+            //int[] arr = { -1, 23, 0, 5, -3, 6 };
+            //foreach(int i in arr)
+            //{
+            //    Console.Write(i + " ");
+            //}
+            //Console.WriteLine();
+            //foreach(int i in bubbleSort(arr, arr.Length))
+            //{
+            //    Console.Write(i + " ");
+            //}
+            #endregion
+
+            #region Matrice
+            //int n = ReadNr();
+            //int[,] mat = new int[n, n];
+
+            //for(int i = 0; i < n; i++)
+            //{
+            //    for(int j = 0; j < n; j++)
+            //    {
+            //        var nr = ReadNr();
+            //        mat[i, j] = nr;
+            //    }
+            //}
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    for (int j = 0; j < n; j++)
+            //    {
+            //        Console.Write(mat[i, j] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //var isIdentity = true;
+            //for (int i = 0; i < n; i++)
+            //{
+            //    for (int j = 0; j < n; j++)
+            //    {
+            //        if((i == j && mat[i,j] != 1) || (i != j && mat[i, j] != 0))
+            //        {
+            //            isIdentity = false;
+            //            break;
+            //        }
+            //    }
+            //}
+
+            //Console.WriteLine($"Matricea este identitate: {isIdentity}");
 
             #endregion
         }
@@ -237,6 +399,34 @@ namespace Conventions
             Array.Reverse(array);
             splitArray.Reverse();
             var ha = splitArray.ToHashSet<string>();
+        }
+
+        static int[] bubbleSort(int[] arr, int n)
+        {
+            int i, j, temp;
+            bool swapped;
+            for (i = 0; i < n - 1; i++)
+            {
+                swapped = false;
+                for (j = 0; j < n - i - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+
+                        // Swap arr[j] and arr[j+1]
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                        swapped = true;
+                    }
+                }
+
+                // If no two elements were
+                // swapped by inner loop, then break
+                if (swapped == false)
+                    break;
+            }
+            return arr;
         }
     }
 }
