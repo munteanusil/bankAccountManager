@@ -1,4 +1,6 @@
-﻿namespace Conventions
+﻿using Conventions.ExceptionsLesson;
+
+namespace Conventions
 {
     struct BankAccount
     {
@@ -43,6 +45,7 @@
                 else
                 {
                     Console.WriteLine("Insuficent funds!");
+                    throw new InsuficientFundsException("Insuficent funds!");
                 }
             }
             else
