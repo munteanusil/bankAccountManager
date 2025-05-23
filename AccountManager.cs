@@ -2,6 +2,12 @@
 {
     class AccountManager
     {
+        public override string ToString()
+        {
+            return "";
+           
+        }
+
         List<BankAccount> Accounts = new List<BankAccount>();
 
         public void OpenAccount(int number, string name)

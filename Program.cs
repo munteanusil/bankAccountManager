@@ -1,4 +1,5 @@
 ﻿using Conventions.ExceptionsLesson;
+using Conventions.Files;
 
 namespace Conventions
 {
@@ -6,16 +7,7 @@ namespace Conventions
     {
         static void Main(string[] args)
         {
-            try
-            {
-                var list = new List<int> {};
-                var hasDuplicates = ExceptionExercise.CheckForDuplicates(list);
-                Console.WriteLine(hasDuplicates);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Handeled exception {ex}");
-            }
+            CreateFile.CreateDirectory("test");
         }
 
         static int ReadNr()
