@@ -1,5 +1,6 @@
 ﻿using Conventions.ExceptionsLesson;
 using Conventions.Files;
+using Conventions.Multithreading;
 
 namespace Conventions
 {
@@ -7,7 +8,19 @@ namespace Conventions
     {
         static void Main(string[] args)
         {
-            CreateFile.CreateDirectory("test");
+            //    var threads = new Thread[10];
+            //    for(int i = 0; i < 10; i++)
+            //    {
+            //        threads[i] = new Thread(ThreadSafeCounter.Increment);
+            //        threads[i].Start();
+            //    }
+            //    foreach(var t in threads)
+            //    {
+            //        t.Join();
+            //    }
+            //    Console.WriteLine($"Valoarea finalae este {ThreadSafeCounter.counter}");
+            new Thread(ThreadSafeSystem.Enqueu).Start();
+            new Thread(ThreadSafeSystem.Consome).Start();
         }
 
         static int ReadNr()
