@@ -1,35 +1,22 @@
-﻿using Conventions.ExceptionsLesson;
-using Conventions.Files;
-using Conventions.Multithreading;
+﻿using Conventions.AsyncAwait;
 
 namespace Conventions
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            //    var threads = new Thread[10];
-            //    for(int i = 0; i < 10; i++)
-            //    {
-            //        threads[i] = new Thread(ThreadSafeCounter.Increment);
-            //        threads[i].Start();
-            //    }
-            //    foreach(var t in threads)
-            //    {
-            //        t.Join();
-            //    }
-            //    Console.WriteLine($"Valoarea finalae este {ThreadSafeCounter.counter}");
-            new Thread(ThreadSafeSystem.Enqueu).Start();
-            new Thread(ThreadSafeSystem.Consome).Start();
+            var token = new CancellationTokenSource(2000);
+            await TimeoutProcesor.StartLongRunningTask(token.Token);
         }
 
-        static int ReadNr()
+        static Task<int> ReadNr()
         {
             while (true)
             {
                 if (int.TryParse(Console.ReadLine(), out int nr))
                 {
-                    return nr;
+                    return Task.FromResult(nr);
                 }
                 else
                 {
